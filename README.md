@@ -1,4 +1,4 @@
-.[!NOTE]
+[!NOTE]
 
 E-commerce de pagina de elementos de computacion "InfinitiBytes PC"
 
