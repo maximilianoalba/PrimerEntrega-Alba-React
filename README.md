@@ -1,5 +1,5 @@
-> .[!NOTE].
+> .[!TIP].
 
-E-commerce de pagina de elementos de computacion "InfinitiBytes PC"
+>E-commerce de pagina de elementos de computacion "InfinitiBytes PC"
 
-# Primera pre entrega React
+>Primera pre entrega React
