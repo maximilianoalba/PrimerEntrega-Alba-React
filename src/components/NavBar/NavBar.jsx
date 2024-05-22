@@ -1,23 +1,24 @@
+import {Link } from "react-router-dom";
 import CartWidget from "../CartWiget/CartWiget";
+import "./NavBar.css";
 import ButtonComponent from "../buttons/ButtonComponent";
-import './NavBar.css';
 
 export default function NavBar() {
   return (
     <>
-      <header className='flex justify-between align-baseline  '>
-        <h1 className= 'text-green-600 m-3 font-mono text-xl'>InfinitiBytes PC</h1>
-      <nav className=' flex gap-5 space-x-8'>
-        <ButtonComponent name='PC Armadas'/>
-        <ButtonComponent name='Marcas'/>
-        <ButtonComponent name='Arma tu PC'/>
-        <ButtonComponent name='Outlet Tecnologico'/>
-        <ButtonComponent name='Servicios'/>
-        <ButtonComponent name='Contacto'/>
-      </nav>
-        <CartWidget/>
+      <header className="flex justify-around  bg-slate-600 bg-gradient-to-r from-emerald-100 to-cyan-400">
+        <Link to="/">
+          <h1 className=" text-cyan-700 m-3 font-mono text-xl font-semibold  hover:text-sky-500 ">
+            InfinitiBytes PC
+          </h1>
+        </Link>
+        <nav className=" flex gap-5 p-3 justify-between  space-x-20 ">
+        <Link to={'/'}><ButtonComponent name={'Home'}/></Link>
+        <Link to={'/ItemListContainer/Pc Escritorior'}><ButtonComponent name={'Pc Escritorio'}/></Link>
+        <Link to={'/ItemListContainer/Notebook'}><ButtonComponent name={'Notebook'}/></Link>
+        </nav>
+        <CartWidget />
       </header>
     </>
   );
 }
-

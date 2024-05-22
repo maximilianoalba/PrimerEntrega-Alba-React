@@ -1,10 +1,12 @@
 import './ButtonComponent.css';
 
-export default function ButtonComponent({name,color}) {
+export default function ButtonComponent({name}) {
     return (
       <>
-        <button className='text-xs text-green-500 rounded-full hover:text-sky-500'  >{name}</button>
+        <button className=' text-lg text-white hover:text-sky-500 ' >{name}</button>
       </>
     );
   }
+  
+
   
