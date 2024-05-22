@@ -11,7 +11,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path="/" element={<ItemListContainer greeting="Bienvenidos a InfinitiBytes PC"  />} />
-          <Route exact path="/itemListContainer/:category" element={<ItemCategory/>} />
+          <Route exact path="/ItemListContainer/:category" element={<ItemCategory/>} />
+          <Route exact path="/ItemListContainer/:category" element={<ItemCategory/>} />
           <Route exact path="/item/:id" element={< ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>

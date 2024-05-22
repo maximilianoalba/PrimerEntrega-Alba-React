@@ -1,3 +1,4 @@
+
 import './ButtonComponent.css';
 
 export default function ButtonComponent({name}) {
@@ -7,6 +8,6 @@ export default function ButtonComponent({name}) {
       </>
     );
   }
-  
+
 
   

@@ -1,4 +1,5 @@
-import {Link } from "react-router-dom";
+
+ import {Link } from "react-router-dom";
 import CartWidget from "../CartWiget/CartWiget";
 import "./NavBar.css";
 import ButtonComponent from "../buttons/ButtonComponent";
@@ -14,7 +15,7 @@ export default function NavBar() {
         </Link>
         <nav className=" flex gap-5 p-3 justify-between  space-x-20 ">
         <Link to={'/'}><ButtonComponent name={'Home'}/></Link>
-        <Link to={'/ItemListContainer/Pc Escritorior'}><ButtonComponent name={'Pc Escritorio'}/></Link>
+        <Link to={'/ItemListContainer/PcEscritorio'}><ButtonComponent name={'PC Escritorio'}/></Link>
         <Link to={'/ItemListContainer/Notebook'}><ButtonComponent name={'Notebook'}/></Link>
         </nav>
         <CartWidget />

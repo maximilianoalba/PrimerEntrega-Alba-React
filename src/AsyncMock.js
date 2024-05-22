@@ -1,7 +1,7 @@
 const productos = [
   {
     id: 1,
-    categoria: "PCEscritorio",
+    categoria: "PcEscritorio",
     titulo: "Pc AMD gamers",
     descripcion:
       "Desktop Gamer AMD Ryzen 9 7950X3D 32GB 2TB SSD GeForceNVIDIA RTX 4090",
@@ -11,7 +11,7 @@ const productos = [
   },
   {
     id: 2,
-    categoria: "PCEscritorio",
+    categoria: "PcEscritorio",
     titulo: "Pc INTEL gamer ",
     descripcion:
       "Desktop Alienware DT Aurora R15 Intel i9-13900KF 32GB 1TB NVIDIA RTX 4090 + Monitor Alienware 25 ",
