@@ -10,7 +10,7 @@ const ItemListContainer = ({}) => {
   }, []);
 
   return (
-    <main className=" bg-cyan-100 flex-wrap content-between">
+    <main className=" font-mono bg-cyan-100 flex-wrap content-between">
       <div className=" bg-green-200 gap-5 my-4">
         <h2 className=" text-center font-mono text-slate-600">
           Bienvenidos a InfinitiByte PC
