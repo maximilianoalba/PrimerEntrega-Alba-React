@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route exact path="/" element={<ItemListContainer greeting="Bienvenidos a InfinitiBytes PC"  />} />
+          <Route exact path="/" element={<ItemListContainer />} />
           <Route exact path="/ItemListContainer/:category" element={<ItemCategory/>} />
           <Route exact path="/ItemListContainer/:category" element={<ItemCategory/>} />
           <Route exact path="/item/:id" element={< ItemDetailContainer />} />

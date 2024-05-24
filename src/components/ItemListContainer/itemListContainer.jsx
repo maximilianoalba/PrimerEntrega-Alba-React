@@ -2,7 +2,7 @@ import { getProducts } from "../../AsyncMock";
 import { useEffect, useState } from "react";
 import ItemCardComponent from "../Card/ItemCardComponent";
 
-const ItemListContainer = ({ greetings }) => {
+const ItemListContainer = ({}) => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -10,9 +10,13 @@ const ItemListContainer = ({ greetings }) => {
   }, []);
 
   return (
-    <main className="justify-center">
-      <section className="bg-slate-200  font-mono text-xl">
-        <h2 className=" text-center text-slate-600">{greetings}</h2>
+    <main className=" bg-cyan-100 flex-wrap content-between">
+      <div className=" bg-green-200 gap-5 my-4">
+        <h2 className=" text-center font-mono text-slate-600">
+          Bienvenidos a InfinitiByte PC
+        </h2>
+      </div>
+      <section className=" flex gap-10   font-mono text-xl">
         <>
           {productos.map((productos) => (
             <ItemCardComponent
