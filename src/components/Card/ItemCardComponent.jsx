@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 const ItemCardComponent = ({ titulo, descripcion, precio, img, id }) => {
   return (
     <>
-      <div class=" font-mono w-80 bg-white shadow rounded">
+      <div class="  font-mono w-80 shadow ">
         <div class="font-mono h-48 w-full bg-cyan-200 flex flex-col justify-between p-4 bg-cover bg-center">
-          <img src={img} alt="Imagen del producto"  className="font-mono h-48 w-full bg-gray-100 flex flex-col justify-between p-4 bg-cover bg-center"  />
+          <img
+            src={img}
+            alt="Imagen del producto"
+            className="font-mono h-48 w-full bg-gray-100 flex flex-col justify-between p-4 bg-cover bg-center"
+          />
         </div>
         <div class="p-4 flex flex-col items-center bg-green-100">
           <h1 class=" font-mono text-gray-800 text-center mt-1">{titulo}</h1>
@@ -23,5 +27,3 @@ const ItemCardComponent = ({ titulo, descripcion, precio, img, id }) => {
 };
 
 export default ItemCardComponent;
-
-

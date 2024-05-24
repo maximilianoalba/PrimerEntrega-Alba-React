@@ -16,13 +16,13 @@ const ItemCategory = () => {
 
   return (
     <>
-    <main className="  bg-cyan-100 flex-wrap content-between">
+    <main className="   bg-cyan-100 flex-wrap content-between">
       <div className=" bg-green-200 gap-5 my-4">
         <h2 className=" text-center font-mono text-slate-600">
           Bienvenidos a InfinitiByte PC
         </h2>
       </div>
-      <section className=" flex gap-10   font-mono text-xl">
+      <section className=" grid grid-cols-1 sm:grid-cols-3 justify-center gap-2 font-mono text-xl">
         <>
           {productos.map((productos) => (
             <ItemCardComponent
