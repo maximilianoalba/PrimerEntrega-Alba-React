@@ -7,7 +7,7 @@ const productos = [
       "Desktop Gamer AMD Ryzen 9 7950X3D 32GB 2TB SSD GeForceNVIDIA RTX 4090",
     precio: 200000,
     img: "https://assets.pcfactory.cl/public/foto/49037/1_200.jpg?t=1714452456575",
-    stock: 4,
+    stock: 5,
   },
   {
     id: 2,

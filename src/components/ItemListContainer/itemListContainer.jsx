@@ -1,13 +1,23 @@
-import { getProducts } from "../../AsyncMock";
+import { getProducts, getCategory } from "../../firebase/firebase";
 import { useEffect, useState } from "react";
-import ItemCardComponent from "../Card/ItemCardComponent";
+import ItemList from "./ItemList";
+import Loading from "../Loading/Loading";
+import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({}) => {
+const ItemListContainer = () => {
+
+  
   const [productos, setProductos] = useState([]);
+  const { idCategory } = useParams();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts.then((datos) => setProductos(datos));
-  }, []);
+    setLoading(true);
+    (idCategory ? getCategory(idCategory) : getProducts()).then((productos) => {
+      setProductos(productos);
+      setLoading(false);
+    });
+  }, [idCategory]);
 
   return (
     <main className="  font-mono bg-cyan-100  content-between">
@@ -17,15 +27,7 @@ const ItemListContainer = ({}) => {
         </h2>
       </div>
       <section className=" grid grid-cols-1 sm:grid-cols-3 g items-center  gap-2   font-mono">
-          {productos.map((productos) => (
-            <ItemCardComponent
-              key={productos.id}
-              id={productos.id}
-              titulo={productos.titulo}
-              precio={productos.precio}
-              img={productos.img}
-            />
-          ))}
+        {loading ? <Loading /> : <ItemList productos={productos} />}
       </section>
     </main>
   );
