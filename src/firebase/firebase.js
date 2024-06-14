@@ -38,7 +38,6 @@ const response = await getDocs(collection(db,"productos"));
 
    //response es un QuerySnapShot - es iterable
   const listaProductos=[];
-+ 
   response.forEach((doc) => listaProductos.push({id: doc.id,  ...doc.data()}));
 //Este forEach trae toda la informacion haciendo un push al array de listaProductos, en firebase el id esta aparte de la coleccion, asi que traemos primero el id y luego los demas datos con un spread operator.
   return listaProductos;
@@ -48,11 +47,11 @@ const response = await getDocs(collection(db,"productos"));
 
 
 //Funcion que itera los productos dependiendo su categoria.
-export async function getCategory(category){
+export async function getCategory(categoria){
   const response = await getDocs(collection(db,"productos"));
   const listaProductos=[];
   response.forEach((doc) => {
-      if (doc.data().category === category) {
+      if (doc.data().categoria === categoria) {
           listaProductos.push({id: doc.id,  ...doc.data()});
       }
   });

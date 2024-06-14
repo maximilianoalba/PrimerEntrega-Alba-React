@@ -6,7 +6,11 @@ const ItemList = ({ productos }) => {
       {productos.map((producto) => (
         <ItemCardComponent
           key={producto.id}
-          producto = {productos}
+          id={producto.id}
+          title={producto.titulo}
+          price={producto.precio}
+          image={producto.img}
+
         />
       ))}
     </>

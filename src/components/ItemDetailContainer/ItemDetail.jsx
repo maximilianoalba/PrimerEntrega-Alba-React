@@ -26,7 +26,7 @@ return (
             />
           </div>
           <div className=" font-mono p-5 flex flex-col items-center bg-green-100">
-            <p className="text-gray-400 font-light text-xs text-center">ID:{id}</p>
+            <p className="text-gray-400 font-light text-xs text-center">ID:{productos.id}</p>
             <h1 className=" font-mono text-gray-800 text-center mt-4">
               {productos.titulo}
             </h1>

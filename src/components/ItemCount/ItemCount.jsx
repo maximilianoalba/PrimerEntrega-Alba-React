@@ -28,7 +28,6 @@ export default function ItemCount({ stock, initial, onAdd }) {
       </div>
       <button onClick={()=> onAdd(quantity)} disabled={!stock} className=" font-mono py-2 px-4 bg-cyan-300 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
         Agregar al carrito
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6 ml-2"
