@@ -3,59 +3,32 @@ import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-
-
   const initCart = JSON.parse(localStorage.getItem("cart")) || [];
   const [cart, setCart] = useState(initCart);
-
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-  console.log(cart)
-  
-/*   const addItem = (producto) => {
-    setCart(prevCart => {
-        let productExists = false;
-        const updatedCart = prevCart.map(item => {
-            if (item.id === producto.id) {
-                productExists = true;
-                return { ...item, quantity: item.quantity + producto.quantity };
-            }
-            return item;
-        });
-        //Si el producto existe, sigue sumando productos, si no, lo agrega.
-        if (!productExists) {
-            updatedCart.push(producto);
-        }
-        return updatedCart;
-    });
-}; */
- const addItem = (newProducts) => {
-    const condicion = estaEnElCarrito(newProducts.id)
-    if(condicion){
-      const productosModificados = cart.map((productsCart)=> {
-        if(productsCart.id === newProducts.id){
-          return { ...productsCart, quantity: productsCart.quantity + newProducts.quantity }
-        }else{
-          return productsCart
-        }
-      })
-      setCart(productosModificados)
-    }else{
-      setCart([ ...cart, newProducts ])
-    }
-  } 
 
-/* const addItem = (item, quantity) => {
-
-    if (!isInCart(item.id)) {
-      setCart((prev) => [...prev, { ...item, quantity }]);
+  const agregarItem = (newProducts) => {
+    const condicion = isInCart(newProducts.id);
+    if (condicion) {
+      const productosModificados = cart.map((productsCart) => {
+        if (productsCart.id === newProducts.id) {
+          return {
+            ...productsCart,
+            quantity: productsCart.quantity + newProducts.quantity,
+          };
+        } else {
+          return productsCart;
+        }
+      });
+      setCart(productosModificados);
     } else {
-      console.error("El producto ya fue agregado");
+      setCart([...cart, newProducts]);
     }
-  }; 
- */
+  };
+
   const totalQuantity = () => {
     const quantityTotalItem = cart.reduce(
       (total, item) => total + item.quantity,
@@ -65,15 +38,15 @@ export const CartProvider = ({ children }) => {
   };
 
   const totalPrice = () => {
-    const totalCart = cart.reduce(
-      (total, item) => total + (item.price * item.quantity),0
-  );
+    const totalCompra = cart.reduce( (total, productsCart) => total + ( productsCart.precio * productsCart.quantity ), 0)
+    return totalCompra
+  }
 
-    return totalCart;
-  };
 
   const removeItem = (itemId) => {
-    const cartUpdated = cart.filter((prod) => prod.id !== itemId);
+    const cartUpdated = cart.filter(
+      (productsCart) => productsCart.id !== itemId
+    );
     setCart(cartUpdated);
   };
 
@@ -82,7 +55,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const isInCart = (itemId) => {
-    const inCart = cart.some((prod) => prod.id === itemId);
+    const inCart = cart.some((productsCart) => productsCart.id === itemId);
     return inCart;
   };
 
@@ -90,7 +63,7 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         cart,
-        addItem,
+        agregarItem,
         removeItem,
         clearCart,
         totalQuantity,

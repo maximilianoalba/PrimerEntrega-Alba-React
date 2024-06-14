@@ -6,14 +6,11 @@ import { FaDeleteLeft } from "react-icons/fa6";
 const Cart = () => {
   const { cart, removeItem, clearCart, totalPrice } = useContext(CartContext);
 
-
   if (cart.length === 0) {
     return (
       <div className="">
         <h1>El carrito esta vacio</h1>
-        <Link to="/">
-          Ver productos
-        </Link>
+        <Link to="/">Ver productos</Link>
       </div>
     );
   }
@@ -21,7 +18,7 @@ const Cart = () => {
   return (
     <div className="flex flex-col p-20">
       <h1>Carrito de compras</h1>
-      {Cart.map((productscart) => (
+      {cart.map((productscart) => (
         <div className="cart-item" key={productscart.id}>
           <img
             className="cart-img"
@@ -32,19 +29,20 @@ const Cart = () => {
           <h3> cantidad: {productscart.quantity} </h3>
           <h3> precio unitario: {productscart.precio} </h3>
           <h3>
-            {" "}
             precio parcial: {productscart.precio * productscart.quantity}
           </h3>
-          <FaDeleteLeft onClick={() => removeItem(productscart.id)} />
+          <FaDeleteLeft onClick={() => removeItem(productscart.id)} className=" size-20 text-red-950" />
         </div>
       ))}
-      <h2>Total : ${totalPrice()}</h2>
+      <h2>Total : $ {totalPrice()} </h2>
       <Link to="/checkout" className="button-link">
-        Continuar comprando
+        <button>Continuar comprando</button>
       </Link>
-      <div className="button-delete" onClick={clearCart}>
-        Eliminar carrito
-      </div>
+      <button>
+        <div className="button-delete" onClick={clearCart}>
+          Eliminar carrito
+        </div>
+      </button>
     </div>
   );
 };

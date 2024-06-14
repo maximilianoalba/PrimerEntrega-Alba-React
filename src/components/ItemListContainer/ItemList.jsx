@@ -7,9 +7,9 @@ const ItemList = ({ productos }) => {
         <ItemCardComponent
           key={producto.id}
           id={producto.id}
-          title={producto.titulo}
-          price={producto.precio}
-          image={producto.img}
+          titulo={producto.titulo}
+          precio={producto.precio}
+          img={producto.img}
 
         />
       ))}

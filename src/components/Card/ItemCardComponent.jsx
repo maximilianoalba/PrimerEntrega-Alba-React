@@ -8,7 +8,7 @@ const ItemCardComponent = ({ titulo, precio, img, id }) => {
         <div className="font-mono h-48 w-full bg-cyan-200 flex flex-col justify-between p-4 bg-cover bg-center">
           <img
             src={img}
-            alt="Imagen del producto"
+            alt={titulo}
             className="font-mono h-48 w-full bg-gray-100 flex flex-col justify-between p-4 bg-cover bg-center"
           />
         </div>

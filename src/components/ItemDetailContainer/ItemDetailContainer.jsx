@@ -8,15 +8,15 @@ const ItemDetailContainer = () => {
   const [productos, setProductos] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const { idCategory } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    setLoading(true);
-    (idCategory ? getCategory(idCategory) : getProducts()).then((productos) => {
-      setProductos(productos);
+    getProducts().then((products) => {
+      const product = products.find((prod) => prod.id === id);
+      setProductos(product);
       setLoading(false);
     });
-  }, [idCategory]);
+  }, [id]);
 
   return (
     <>
