@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
-export const CartProvider = ({ Children }) => {
+export const CartProvider = ({ children }) => {
 
 
   const initCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -96,7 +96,7 @@ export const CartProvider = ({ Children }) => {
         totalQuantity,
         totalPrice,
       }}>
-      {Children}
+      {children}
     </CartContext.Provider>
   );
 };

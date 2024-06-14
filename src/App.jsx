@@ -8,17 +8,17 @@ import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
-    <BrowserRouter>
     <CartProvider>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/ItemListContainer/:idCategory" element={<ItemListContainer />} />
-        <Route path="/detail/:idProduct" element={<ItemDetailContainer />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/ItemListContainer/:idCategory" element={<ItemListContainer />} />
+          <Route path="/detail/:idProduct" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
     </CartProvider>
-  </BrowserRouter>
   );
 }
 

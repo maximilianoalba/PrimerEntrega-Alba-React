@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { FaDeleteLeft } from "react-icons/fa6";
 
 const Cart = () => {
-  const { Cart, removeItem, clearCart, totalPrice } = useContext(CartContext);
+  const { cart, removeItem, clearCart, totalPrice } = useContext(CartContext);
 
 
-  if (Cart.length === 0) {
+  if (cart.length === 0) {
     return (
       <div className="">
         <h1>El carrito esta vacio</h1>
