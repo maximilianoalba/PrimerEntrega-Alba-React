@@ -38,8 +38,8 @@ export const CartProvider = ({ children }) => {
   };
 
   const totalPrice = () => {
-    const totalCompra = cart.reduce( (total, productsCart) => total + ( productsCart.precio * productsCart.quantity ), 0)
-    return totalCompra
+    const totalCart = cart.reduce( (total, productsCart) => total + ( productsCart.precio * productsCart.quantity ), 0)
+    return totalCart
   }
 
 
