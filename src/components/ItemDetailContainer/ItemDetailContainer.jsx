@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-      <section className="flex justify-center items-center mt-[50px]  bg-cyan-50 ">
+      <section className=" flex justify-center items-center mt-[50px]  bg-cyan-50 ">
         {loading ? <Loading /> : <ItemDetail productos={productos} />}
       </section>
     </>
