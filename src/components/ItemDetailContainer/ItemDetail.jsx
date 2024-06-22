@@ -53,12 +53,18 @@ const addProduct = (count) => {
                   Ir al 🛒
                 </button>
               </Link>
-            ) : (
+              
+            ): (
               <ItemCount
                 stock={productos.stock}
                 addProduct={addProduct}
               />
             )}
+              <Link to="/">
+                <button className=" font-mono py-2 px-4 bg-cyan-300 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+                  Seguir comprando
+                </button>
+              </Link>
           </div>
         </div>
       </div>
