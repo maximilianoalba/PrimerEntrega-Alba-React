@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 const ItemCount = ({ stock, addProduct }) => {
   const [count, setcount] = useState(1);
@@ -17,7 +18,7 @@ const ItemCount = ({ stock, addProduct }) => {
 
   const handleClickAddToCart = () => {
     addProduct(count)
-  };
+  }
 
 
 
@@ -38,4 +39,5 @@ const ItemCount = ({ stock, addProduct }) => {
     </>
   );
 }
+
 export default ItemCount;

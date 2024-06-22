@@ -59,10 +59,11 @@ export async function getCategory(categoria){
 }
 
 //Funcion que permite agregar datos a la base de datos de firebase.
-export async function addOrder(order){
-  const ordersCollections = collection(db, "orders");
-  const docRef = await addDoc(ordersCollections, order);
-  console.log("Doc ref generado:" +docRef);
-  console.log("id generado: " +docRef.id);
+
+export async function addOrder(order) {
+  const ordersCollection = collection(db, 'orders');
+  const docRef = await addDoc(ordersCollection, order);
+  console.log('Doc ref generado: ' + docRef);
+  console.log('Id generado: ' + docRef.id);
   return docRef.id;
 }
