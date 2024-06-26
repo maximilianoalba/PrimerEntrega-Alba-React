@@ -16,6 +16,7 @@ export default function NavBar() {
         <nav className=" flex gap-2 p-3 justify-between  space-x-20 ">
         <Link to={'/'}><ButtonComponent name={'Home'}/></Link>
         <Link to={'/ItemListContainer/PcEscritorio'}><ButtonComponent name={'PC Escritorio'}/></Link>
+        <Link to={'/ItemListContainer/Monitores'}><ButtonComponent name={'Monitores'}/></Link>
         <Link to={'/ItemListContainer/Notebook'}><ButtonComponent name={'Notebook'}/></Link>
         <Link to={'/ItemListContainer/OutletTecnologico'}><ButtonComponent name={'Outlet Tecnologico'}/></Link>
         <Link to={'/ItemListContainer/Accesorios'}><ButtonComponent name={'Accesorios'}/></Link>
